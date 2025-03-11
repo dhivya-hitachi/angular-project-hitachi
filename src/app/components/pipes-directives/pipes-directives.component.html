@@ -1,0 +1,26 @@
+<h4>Pipes</h4>
+<h5>Built-in Pipes:</h5>
+<div class="pipes">
+      <p>Company Name : {{ company | titlecase }} </p>
+      <p> Joined On:  {{ purchasedOn | date }}</p>
+      <p>Amount: {{ amount | currency }}</p>
+</div>
+<h5>Custom Pipes:</h5>
+<p>{{ 'hitachi digital service' | reverse }}</p>
+<h4>Directives</h4>
+<h5>Built-in Directives:</h5>
+<div>
+      <div *ngIf="isVisible">This content is visible only if 'isVisible' is true.</div>
+      <ul>
+            <li *ngFor="let item of items">{{ item }}</li>
+      </ul>
+      <div [ngStyle]="{ 'background-color': bgColor, 'font-size': fontSize }">
+            This div's background color and font size are dynamically applied.
+      </div>
+      <div [ngClass]="{ 'highlight': isHighlighted, 'bold-text': isBold }">
+            This text has dynamic classes.
+      </div>
+</div>
+<h5>Custom Directives:</h5>
+<!-- app.component.html -->
+<p appHoverColor>Hover over this text to change its background color.</p>

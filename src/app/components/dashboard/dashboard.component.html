@@ -1,0 +1,35 @@
+<h1>Data Binding</h1>
+<p><b>String Interpolation:</b> {{ title }}</p>
+<p><b>Property Binding:</b> <img [src]="imageUrl" alt="Hitachi"></p>
+<div>
+    <b>Event Binding:</b>   
+    <p>Count: {{ count }}</p>
+    <button (click)="increment()">Increment</button>
+    <button (click)="reset()">Reset</button>
+</div><br>
+<div>
+    <b>Two way Binding:</b> 
+    <h1>Welcome, {{ name }}!</h1>
+  
+    <!-- Two-way binding using ngModel -->
+    <input [(ngModel)]="name" placeholder="Enter your name" />
+  
+    <p>Your name is: {{ name }}</p>
+  </div>
+  
+  <h1>Parent Component</h1>
+    <app-communication [parentData]="messageFromParent" (childEvent)="receiveMessage($event)">
+        <!-- Added for ng-content -->
+          <p>This is the body content</p>
+    </app-communication>
+    <p>{{ receivedMessage }}</p>
+    <!-- Added for viewchild -->
+    <button (click)="callChildMethod()">Call Child Method</button>
+    <!-- Added for service -->
+    <button (click)="changeMessage()">Change Message</button>
+
+    <app-lifecycle-hooks [data]="messages">
+      <p>Projected Content</p>
+    </app-lifecycle-hooks>
+<button (click)="changeData()">Change Data</button>
+    
